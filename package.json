@@ -1,0 +1,19 @@
+{
+  "name": "snippets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "codeBoxToFiles.js",
+  "dependencies": {
+    "atob": "^1.1.2",
+    "easy-file": "^0.1.0",
+    "readline-sync": "^1.2.21",
+    "rx": "^4.0.0",
+    "xml2js": "^0.4.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Rasmuson <danielrasmuson@gmail.com> (http://danielrasmuson.com)",
+  "license": "ISC"
+}
