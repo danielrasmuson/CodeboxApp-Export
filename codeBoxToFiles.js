@@ -19,6 +19,7 @@ function CodeBoxFiles(filePath){
           return obj.$.type == 'SNIPPET';
         }).map(function(obj){
           return {
+            // the ugly dot notation is from parser
             name: obj.attribute[0]._,
             id: obj.relationship[1].$.idrefs
           }
@@ -38,12 +39,19 @@ function CodeBoxFiles(filePath){
                 console.log('Error: Empty Snippet '+fileData.name);
               }
             }
+            try{
+              body = atob(body)
+            } catch(e){
+              console.log('Decode Error '+fileData.name);
+            }
             return {
               name: fileData.name,
-              body: atob(body)
+              body: body
             }
           })
-        }).reduce(function(a, b){
+        })
+        // its a two dimensional array
+        .reduce(function(a, b){
           return a.concat(b);
         })
 
